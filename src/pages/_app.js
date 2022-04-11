@@ -46,6 +46,7 @@ function App({ Component, pageProps }) {
           href="https://unpkg.com/prism-theme-night-owl@1.4.0/build/style.css"
           rel="stylesheet"
         />
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
       </Head>
       <DefaultSeo {...SEO} />
       <GlobalStyles />
