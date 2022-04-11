@@ -38,7 +38,7 @@ const BlogList = ({ posts }) => {
     <>
       <NextSeo
         title="Home | Miguel Machado"
-        description="Um blog de um desenvolvedor Front End, fã de SVG, Javascript, React e novas tecnologias. Nômade Digital, instrutor na Udemy e viajando o mundo."
+        description="Um blog de um desenvolvedor Front End, fã de Javascript, React e GraphQL."
         openGraph={{
           images: [
             {
