@@ -20,11 +20,7 @@ function transformPostsToSearchObjects(posts) {
 }
 
 export async function buildAlgoliaIndexes(posts) {
-  if (
-    Boolean(process.env.NEXT_PUBLIC_PROD_ALGOLIA) !== true ||
-    process.env.NODE_ENV === 'development'
-  )
-    return
+  if (process.env.NODE_ENV === 'development') return
 
   try {
     const transformedPosts = transformPostsToSearchObjects(posts)
@@ -47,6 +43,7 @@ export async function buildAlgoliaIndexes(posts) {
       )
     }
   } catch (error) {
+    console.log('\n======= ERROR =======')
     console.log(error)
   }
 }
