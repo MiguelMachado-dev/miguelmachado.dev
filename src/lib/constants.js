@@ -1,7 +1,7 @@
 export const BLOG_TITLE = 'Miguel Machado'
 
 export const BLOG_SUBTITLE =
-  'Um blog de um desenvolvedor Front End, fã de Javascript, React e GraphQL.'
+  'Um blog de um desenvolvedor Front End, apaixonado por Javascript, React e GraphQL.'
 
 export const BLOG_DESCRIPTION = [BLOG_TITLE, BLOG_SUBTITLE].join(' | ')
 

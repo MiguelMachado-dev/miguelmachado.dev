@@ -1,4 +1,11 @@
-module.exports = {
+const withPWA = require('next-pwa')
+const isProd = process.env.NODE_ENV === 'production'
+
+module.exports = withPWA({
+  pwa: {
+    dest: 'public',
+    disable: !isProd,
+  },
   webpack: (config, { dev, isServer }) => {
     // Replace React with Preact only in client production build
     if (!dev && !isServer) {
@@ -21,4 +28,4 @@ module.exports = {
     ]
   },
   images: { domains: ['pbs.twimg.com'] }
-}
+})

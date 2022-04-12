@@ -1,0 +1,16 @@
+{
+  "name": "Miguel Machado Blog",
+  "short_name": "Miguel Blog",
+  "icons": [
+    {
+      "src": "/assets/img/mmcoding-icon.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    }
+  ],
+  "background_color": "#15141b",
+  "theme_color": "#15141b",
+  "description": "Um blog de um desenvolvedor Front End, apaixonado por Javascript, React e GraphQL.",
+  "display": "fullscreen",
+  "start_url": "/"
+}
