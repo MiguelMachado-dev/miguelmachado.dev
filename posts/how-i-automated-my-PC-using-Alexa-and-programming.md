@@ -1,10 +1,13 @@
 ---
+date: 2020-07-27 12:05:00
+image: /assets/img/alexa-echo-dot.jpg
 title: How I automated my PC using Alexa and programming
-description: How to use shell scripts, vbs and nodejs to automate your computer with Alexa and TriggerCMD
-date: "2020-07-27 12:05:00"
-image: "/assets/img/alexa-echo-dot.jpg"
-category: alexa
+description: How to use shell scripts, vbs and nodejs to automate your computer
+  with Alexa and TriggerCMD
+main-class: misc
+color: "#7AAB13"
 background: "#31C4F3"
+category: alexa
 ---
 
 ## Introduction
