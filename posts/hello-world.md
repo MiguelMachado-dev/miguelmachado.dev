@@ -1,10 +1,12 @@
 ---
 date: 2019-12-06 06:30:00
+image: /assets/img/hello-world.png
 title: Hello, World!
-description: "Let me introduce to you. Come, have a sit!"
-category: misc
+description: Let me introduce to you. Come, have a sit!
+main-class: misc
+color: "#7AAB13"
 background: "#77708a"
-image: "/assets/img/hello-world.png"
+category: misc
 ---
 
 ![Image of "Wello World" in a terminal](/assets/img/hello-world.png)
