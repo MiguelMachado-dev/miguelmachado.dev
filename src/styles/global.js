@@ -103,5 +103,10 @@ const GlobalStyles = createGlobalStyle`
   pre code {
     background: inherit !important;
   }
+
+  .infinite-scroll-component {
+    margin: auto;
+    max-width: 70rem;
+  }
 `
 export default GlobalStyles

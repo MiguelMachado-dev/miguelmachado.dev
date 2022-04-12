@@ -5,7 +5,6 @@ import transitions from 'styles/transitions'
 
 export const PostWrapper = styled.section`
   align-items: center;
-  border-bottom: 1px solid var(--borders);
   display: flex;
   padding: 2rem 3rem;
   width: 100%;
