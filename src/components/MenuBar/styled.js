@@ -16,7 +16,6 @@ export const MenuBarWrapper = styled.aside`
   width: 100%;
   padding: 0;
   padding-bottom: env(safe-area-inset-bottom);
-  padding-left: 20rem;
   justify-content: center;
   border: 0;
   border-top: 1px solid var(--borders);
@@ -26,7 +25,6 @@ export const MenuBarWrapper = styled.aside`
     justify-content: space-between;
     padding-top: 0px;
     padding-right: 0px;
-    padding-left: 0px;
   `}
 `
 
