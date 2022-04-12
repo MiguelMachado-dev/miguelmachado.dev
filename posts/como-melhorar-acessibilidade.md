@@ -1,10 +1,14 @@
 ---
+date: 2021-07-27 17:00:00
+image: /assets/img/acessibilidade-medium.png
 title: Como melhorar a acessibilidade de seus sites
 description: Boas práticas em acessibilidade!
-date: "2021-07-27 17:00:00"
-image: "/assets/img/acessibilidade-medium.png"
-category: a11y
+main-class: a11y
+color: "#009e66"
 background: "#009e66"
+tags:
+  - acessibilidade
+category: a11y
 ---
 
 ## Introdução
