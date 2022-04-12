@@ -19,6 +19,7 @@ export const MenuBarWrapper = styled.aside`
   justify-content: center;
   border: 0;
   border-top: 1px solid var(--borders);
+  box-shadow: 0px -10px 20px 0px #3d375e33;
 
   ${media.lessThan('large')`
     flex-direction: row;
