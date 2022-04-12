@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 import * as S from './styled'
 
-const Post = ({ slug, date, timeToRead, title, description, main_class }) => {
+const Post = ({ slug, timeToRead, title, description, main_class }) => {
   return (
     <Link href={slug} passHref>
       <S.PostLink>
