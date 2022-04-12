@@ -1,10 +1,12 @@
 ---
+date: 2019-12-07 11:24:38
+image: /assets/img/rem-em-px.png
 title: How to make a responsive website using pure CSS
 description: How to use media queries and which unit to use to make a better responsive
-date: "2019-12-07 11:24:38"
-image: "/assets/img/rem-em-px.png"
-category: css
+main-class: css
+color: "#2DA0C3"
 background: "#2DA0C3"
+category: css
 ---
 
 ## Introduction
