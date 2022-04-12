@@ -1,10 +1,16 @@
 ---
+date: 2021-03-24 11:20:00
+image: /assets/img/sitemap.png
 title: Como gerar sitemap no Next.JS
 description: Como gerar sitemap estático e dinâmico no Next.JS com o next-sitemap
-date: "2021-03-24 11:20:00"
-image: "/assets/img/sitemap.png"
-category: js
+main-class: js
+color: "#a29330"
 background: "#a29330"
+tags:
+  - tutorial
+  - nextjs
+  - sitemap
+category: js
 ---
 
 ## Introdução
