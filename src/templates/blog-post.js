@@ -7,6 +7,7 @@ import { NextSeo } from 'next-seo'
 import { timeToRead } from 'lib/utils'
 
 import RecommendedPosts from 'components/RecommendedPosts'
+import PostTag from 'components/PostTag'
 
 import {
   PostHeader,
@@ -49,6 +50,7 @@ const BlogPost = ({ post }) => {
         </PostDate>
         <PostTitle>{post.frontmatter.title}</PostTitle>
         <PostDescription>{post.frontmatter.description}</PostDescription>
+        <PostTag tags={post.frontmatter?.tags} />
       </PostHeader>
       <MainContent>
         <div dangerouslySetInnerHTML={{ __html: post.content }} />
