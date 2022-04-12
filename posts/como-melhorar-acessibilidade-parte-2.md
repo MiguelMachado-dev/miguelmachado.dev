@@ -1,10 +1,12 @@
 ---
+date: 2022-03-16 14:10:00
+image: /assets/img/acessibilidade-parte-2.jpeg
 title: Como melhorar a acessibilidade de seus sites - Parte 2
 description: Boas práticas em acessibilidade!
-date: "2022-03-16 14:10:00"
-image: "/assets/img/acessibilidade-parte-2.jpeg"
-category: a11y
+main-class: a11y
+color: "#009e66"
 background: "#009e66"
+category: a11y
 ---
 
 ## Introdução
