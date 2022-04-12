@@ -46,6 +46,7 @@ function App({ Component, pageProps }) {
           href="https://unpkg.com/prism-theme-night-owl@1.4.0/build/style.css"
           rel="stylesheet"
         />
+        <link rel="manifest" href="/manifest.json" />
       </Head>
       <DefaultSeo {...SEO} />
       <GlobalStyles />
