@@ -9,7 +9,7 @@ export const ProfileContainer = styled.section`
   flex-direction: column;
 
   ${media.lessThan('large')`
-    align-items: flex-start;
+    align-items: center;
     display: ${props => (props.isMobileHeader ? 'flex' : 'none')};
     background: var(--mediumBackground);
     border-bottom: 1px solid var(--borders);

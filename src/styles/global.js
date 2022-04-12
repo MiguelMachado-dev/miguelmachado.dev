@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import media from 'styled-media-query'
 
 const GlobalStyles = createGlobalStyle`
 @font-face {
@@ -107,6 +108,11 @@ const GlobalStyles = createGlobalStyle`
   .infinite-scroll-component {
     margin: auto;
     max-width: 70rem;
+    padding: 0 4rem;
+
+    ${media.lessThan('large')`
+      padding: 0;
+    `}
   }
 `
 export default GlobalStyles
