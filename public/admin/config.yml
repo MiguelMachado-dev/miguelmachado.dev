@@ -2,7 +2,7 @@ backend:
   name: github
   branch: main
   repo: MiguelMachado-dev/miguelmachado.dev
-  base_url: https://miguelmachado.dev
+  base_url: https://miguelmachado.dev/
   auth_endpoint: api/auth/
 
 media_folder: public/assets/img
