@@ -9,7 +9,7 @@ export const BLOG_AUTHOR = 'Miguel Machado'
 
 export const BLOG_AUTHOR_LINK = 'https://twitter.com/oMigtito'
 
-export const BLOG_URL = 'https://miguelmachadop.dev'
+export const BLOG_URL = 'https://miguelmachado.dev'
 
 export const BLOG_AUTHOR_POSITION = 'Frontend Engineer'
 
