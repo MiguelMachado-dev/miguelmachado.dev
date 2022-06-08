@@ -32,7 +32,7 @@ Inicie o servidor
 
 ## Stack utilizada
 
-**Front-end:** React, NextJS, PWA, Netlify CMS, Algoliasearch
+**Front-end:** React, NextJS, PWA, Netlify CMS, Algolia Search
 
 
 ## Autores
