@@ -38,6 +38,7 @@ Inicie o servidor
 ## Autores
 
 - [@MiguelMachado-dev](https://www.github.com/MiguelMachado-dev)
+- ✉️  Contact me hello@miguelmachado.dev [(Crypt It!)](https://github.com/MiguelMachado-dev/MiguelMachado-dev/blob/master/public_key_miguelmachado-dev.asc)
 
 
 ## Referência
