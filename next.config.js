@@ -18,11 +18,11 @@ module.exports = withPWA({
 
     return config
   },
-  async redirects() {
+  redirects() {
     return [
       {
-        source: '/my-trips/',
-        destination: 'https://my-trips.miguelmachado.dev/',
+        source: '/todos-os-meus-links',
+        destination: 'https://meus-links.miguelmachado.dev/',
         permanent: true
       },
     ]

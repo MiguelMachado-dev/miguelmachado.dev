@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "/todos-os-meus-links", "destination": "https://meus-links.miguelmachado.dev/", "permanent": true }
+  ]
+}
