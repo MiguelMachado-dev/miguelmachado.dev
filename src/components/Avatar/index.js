@@ -6,10 +6,11 @@ const Avatar = () => {
   return (
     <S.AvatarWrapper>
       <Image
-        src="https://pbs.twimg.com/profile_images/1319261726836166656/VHb9nKyv_400x400.jpg"
-        alt="Uma foto minha na praia, usando óculos. Foto tirada de lado, onde estou olhando para o mar."
+        src="https://avatars.githubusercontent.com/u/29252011?v=4"
+        alt="Uma foto minha tirada de frente, estou com uma blusa preta e um semi sorriso."
         width={64}
         height={64}
+        quality={100}
       />
     </S.AvatarWrapper>
   )

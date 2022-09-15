@@ -27,5 +27,5 @@ module.exports = withPWA({
       },
     ]
   },
-  images: { domains: ['pbs.twimg.com'] }
+  images: { domains: ['avatars.githubusercontent.com'] }
 })
