@@ -25,6 +25,11 @@ module.exports = withPWA({
         destination: 'https://meus-links.miguelmachado.dev/',
         permanent: true
       },
+      {
+        source: '/meus-links',
+        destination: 'https://meus-links.miguelmachado.dev/',
+        permanent: true
+      },
     ]
   },
   images: { domains: ['avatars.githubusercontent.com'] }

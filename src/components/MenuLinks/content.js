@@ -10,6 +10,10 @@ const links = [
   {
     label: 'Viagens',
     url: 'https://my-trips.miguelmachado.dev/'
+  },
+  {
+    label: 'Meus Links',
+    url: 'https://meus-links.miguelmachado.dev/'
   }
 ]
 
