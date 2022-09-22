@@ -17,7 +17,11 @@ tags:
 
 > [ESLint](https://eslint.org/) é um projeto open source que ajuda a encontrar e corrigir problemas em seu código JavaScript. Não importa se está escrevendo código no navegador ou no servidor, com ou sem framework, o ESLint pode ajudar seu código a ser mais consistente e robusto.
 
-T﻿recho retirado da documentação do ESLint. Além de checarmos problemas, podemos forçar um padrão e regras no código. O que queremos que seja um erro, aviso, verificado ou ignorado.
+*Trecho retirado da documentação do ESLint.*
+
+---
+
+Além de checarmos problemas, podemos forçar um padrão e regras no código. O que queremos que seja um erro, aviso, verificado ou ignorado.
 
 ### Naming Convention
 

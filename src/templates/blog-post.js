@@ -23,8 +23,6 @@ const BlogPost = ({ post }) => {
     Prism.highlightAll()
   }, [post])
 
-  console.log( post.frontmatter.tags)
-
   return (
     <>
       <NextSeo
