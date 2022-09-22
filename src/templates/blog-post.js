@@ -34,7 +34,7 @@ const BlogPost = ({ post }) => {
           description: post.frontmatter.description,
           images: [
             {
-              url: `https://og-image-service.miguelmachado.dev/${encodeURIComponent(post.frontmatter.title)}.jpg`,
+              url: `https://og-image-service.miguelmachado.dev/${encodeURIComponent(post.frontmatter.title)}.jpg/?v=1`,
               alt: `${post.frontmatter.title}`
             }
           ],
