@@ -23,6 +23,8 @@ const BlogPost = ({ post }) => {
     Prism.highlightAll()
   }, [post])
 
+  console.log( post.frontmatter.tags)
+
   return (
     <>
       <NextSeo
@@ -37,7 +39,12 @@ const BlogPost = ({ post }) => {
               url: `https://og-image-service.miguelmachado.dev/${post.frontmatter.title}.png`,
               alt: `${post.frontmatter.title}`
             }
-          ]
+          ],
+          type: 'article',
+          article: {
+            publishedTime: new Date(post.date).toISOString(),
+            tags: post.frontmatter.tags
+          }
         }}
       />
       <PostHeader>
