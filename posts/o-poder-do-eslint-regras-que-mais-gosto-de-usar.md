@@ -1,6 +1,7 @@
 ---
 layout: post
 date: 2022-09-22 12:57:26
+image: /assets/img/1_3adbbrn3gotbz72xqfo96g.png
 title: O poder do ESLint - Regras que mais gosto de usar
 description: ESLint ajuda a mantermos um padrão no código e verificar erros.
   Aqui estarei listando algumas regras que não vivo sem!
@@ -11,6 +12,8 @@ tags:
   - regras
 ---
 ## Introdução
+
+
 
 > [ESLint](https://eslint.org/) é um projeto open source que ajuda a encontrar e corrigir problemas em seu código JavaScript. Não importa se está escrevendo código no navegador ou no servidor, com ou sem framework, o ESLint pode ajudar seu código a ser mais consistente e robusto.
 
