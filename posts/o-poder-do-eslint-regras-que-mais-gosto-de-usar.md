@@ -24,7 +24,7 @@ T﻿recho retirado da documentação do ESLint. Além de checarmos problemas, po
 Com typescript-eslint, conseguimos definir um prefixo para variáveis com tipos **booleans**.\
 Seguindo essa convenção, uma variável booleana "open" daria erro no código, e precisaríamos alterá-la para `isOpen` ou algo do tipo!
 
-```jsonc
+```json
 // .eslintrc.json
 
 {
@@ -50,7 +50,7 @@ C﻿om Import Order conseguimos, como nome induz, organizar a ordem de nossos im
 
 N﻿o exemplo abaixo, sempre o que vem do react ficaria no topo, logo após nossos components, templates, types e etc... Podemos definir se queremos um espaço em branco entre cada um ou não. E o melhor, isso tudo será sempre arrumado ao salvar o arquivo! Então não precisamos nos preocupar em arrumar e sempre teremos um arquivo padronizado!
 
-```jsonc
+```json
 // .eslintrc.json
 "import/order": [
       "error",
@@ -104,7 +104,7 @@ N﻿o exemplo abaixo, sempre o que vem do react ficaria no topo, logo após noss
 
 C﻿om essa regra, definimos que todos os export serão named exports e não default, assim utilizando o nome dado e garantindo também que teremos nomes únicos na aplicação, e o próprio arquivo que define o nome dele, e não quem importa, ficando mais fácil também, que o refactor funcione até melhor!
 
-```jsonc
+```json
 "import/prefer-default-export": "off",
 "import/no-default-export": "error",
 ```
