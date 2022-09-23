@@ -6,6 +6,7 @@ import { NextSeo } from 'next-seo'
 
 import { timeToRead } from 'lib/utils'
 
+import DisqusComments from 'components/DisqusComments'
 import RecommendedPosts from 'components/RecommendedPosts'
 import PostTag from 'components/PostTag'
 
@@ -60,6 +61,7 @@ const BlogPost = ({ post }) => {
       <MainContent>
         <div dangerouslySetInnerHTML={{ __html: post.content }} />
       </MainContent>
+      <DisqusComments post={post} />
       <RecommendedPosts next={post.nextPost} previous={post.prevPost} />
     </>
   )
