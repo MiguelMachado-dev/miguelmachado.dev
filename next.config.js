@@ -30,6 +30,11 @@ module.exports = withPWA({
         destination: 'https://meus-links.miguelmachado.dev/',
         permanent: true
       },
+      {
+        source: '/discord',
+        destination: 'https://discord.gg/4vPe9UjTeq',
+        permanent: true
+      }
     ]
   },
   images: { domains: ['avatars.githubusercontent.com'] }
