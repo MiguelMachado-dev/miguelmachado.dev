@@ -3,7 +3,7 @@ import {DiscussionEmbed} from "disqus-react"
 import * as S from './styled'
 
 const DisqusComments = ({ post }) => {
-  const disqusShortname = process.env.NEXT_PUBLIC_DISQUS_SHORTNAME
+  const disqusShortname = 'miguelmachado'
 
   const disqusConfig = {
     url: `https://miguelmachado.dev/${post.slug}`,
