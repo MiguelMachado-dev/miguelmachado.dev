@@ -24,6 +24,7 @@ export const SidebarContainer = styled.aside`
     width: 100%;
     transform: ${props =>
       props.isMenuOpen ? 'translateX(0)' : 'translateX(-100vw)'};
+    z-index: 1;
   `}
 `
 
