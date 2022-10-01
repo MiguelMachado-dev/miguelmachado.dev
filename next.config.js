@@ -34,6 +34,11 @@ module.exports = withPWA({
         source: '/discord',
         destination: 'https://discord.gg/4vPe9UjTeq',
         permanent: true
+      },
+      {
+        source: '/twitch',
+        destination: 'https://twitch.tv/Migtito',
+        permanent: true
       }
     ]
   },

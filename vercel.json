@@ -2,6 +2,7 @@
   "redirects": [
     { "source": "/todos-os-meus-links", "destination": "https://meus-links.miguelmachado.dev/", "permanent": true },
     { "source": "/meus-links", "destination": "https://meus-links.miguelmachado.dev/", "permanent": true },
-    { "source": "/discord", "destination": "https://discord.gg/4vPe9UjTeq", "permanent": true }
+    { "source": "/discord", "destination": "https://discord.gg/4vPe9UjTeq", "permanent": true },
+    { "source": "/twitch", "destination": "https://twitch.tv/Migtito", "permanent": true }
   ]
 }
