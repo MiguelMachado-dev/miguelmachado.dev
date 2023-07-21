@@ -31,7 +31,7 @@ In Go, a struct is a composite data type that allows you to group zero or more v
 
 Here is an example of a simple struct in Go:
 
-```go
+```clike
 type Person struct {
     Name    string
     Age     int
