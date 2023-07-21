@@ -13,8 +13,6 @@
       {
         "languages": [
           "javascript",
-          "golang",
-          "go",
           "css",
           "typescript",
           "json",
@@ -23,6 +21,7 @@
           "html",
           "markdown",
           "bash",
+          "go",
           "yaml"
         ],
         "plugins": ["line-numbers"],
