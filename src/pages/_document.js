@@ -34,7 +34,8 @@ export default class MyDocument extends Document {
         <body className="dark">
           <Main />
           <NextScript />
-          <script type="text/javascript" src="/libs/prism-go.min.js"></script>
+          {/* <script type="text/javascript" src="/libs/prism-go.min.js"></script> */}
+          <script type="text/javascript" src="/libs/prism.js"></script>
           <script
             dangerouslySetInnerHTML={{
               __html: `
