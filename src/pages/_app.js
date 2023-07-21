@@ -46,6 +46,7 @@ function App({ Component, pageProps }) {
           href="https://unpkg.com/prism-theme-night-owl@1.4.0/build/style.css"
           rel="stylesheet"
         />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-go.min.js" />
         <link
           href="https://mastodon.social/@theMigtito"
           rel="me"
