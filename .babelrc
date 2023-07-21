@@ -13,6 +13,8 @@
       {
         "languages": [
           "javascript",
+          "golang",
+          "go",
           "css",
           "typescript",
           "json",
