@@ -35,7 +35,7 @@ export default class MyDocument extends Document {
         <body className="dark">
           <Main />
           <NextScript />
-          <Script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-go.min.js" />
+          <Script src="/libs/prism-go.min.js" />
           <script
             dangerouslySetInnerHTML={{
               __html: `
