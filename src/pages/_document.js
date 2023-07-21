@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Script from 'next/script'
 import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
@@ -34,6 +35,7 @@ export default class MyDocument extends Document {
         <body className="dark">
           <Main />
           <NextScript />
+          <Script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-go.min.js" />
           <script
             dangerouslySetInnerHTML={{
               __html: `
