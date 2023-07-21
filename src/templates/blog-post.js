@@ -21,8 +21,11 @@ import {
 
 const BlogPost = ({ post }) => {
   useEffect(() => {
-    Prism.highlightAll()
-  }, [post])
+    const highlight = async () => {
+      await Prism.highlightAll(); // <--- prepare Prism
+    };
+    highlight(); // <--- call the async function
+  }, [post]); // <--- run when post updates
 
   return (
     <>
