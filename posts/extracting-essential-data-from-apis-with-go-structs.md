@@ -31,14 +31,12 @@ In Go, a struct is a composite data type that allows you to group zero or more v
 
 Here is an example of a simple struct in Go:
 
-```go
+``` ``go
 type Person struct {
 	Name    string
 	Age     int
 	Address string
-}
-
-```
+}```﻿
 
 ## Using Structs to Decode API Responses
 
@@ -51,7 +49,6 @@ type Repository struct {
 	Name string `json:"name"`
 	Slug string `json:"slug"`
 }
-
 ```
 
 Let's make the API call and get the response:
@@ -66,7 +63,6 @@ body, err := ioutil.ReadAll(resp.Body)
 if err != nil {
 	log.Fatalln(err)
 }
-
 ```
 
 And then we can unmarshal the JSON into our struct:
@@ -79,7 +75,6 @@ if err != nil {
 }
 
 fmt.Println(repo.Name, repo.Slug)
-
 ```
 
 Go will automatically fill the `Name` and `Slug` fields with the corresponding data from the JSON and ignore the rest.
