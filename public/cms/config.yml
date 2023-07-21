@@ -33,7 +33,7 @@ collections:
           label: 'Main Class',
           name: 'main-class',
           widget: 'select',
-          options: ['a11y', 'css', 'js', 'html', 'dev', 'misc']
+          options: ['a11y', 'css', 'js', 'html', 'dev', 'misc', 'go']
         }
       - {
           label: 'Color',
@@ -46,7 +46,8 @@ collections:
               { label: 'JS', value: '#d6ba32' },
               { label: 'HTML', value: '#EB7728' },
               { label: 'Dev', value: '#637a91' },
-              { label: 'Misc', value: '#7AAB13' }
+              { label: 'Misc', value: '#7AAB13' }.
+              { label: 'Go', value: '#007d9c' },
             ]
         }
       - { label: 'Tags', name: 'tags', widget: 'list', default: [''] }
