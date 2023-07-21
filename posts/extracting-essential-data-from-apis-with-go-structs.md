@@ -1,16 +1,23 @@
 ---
 layout: post
 date: 2023-07-20 11:40:39
+image: /assets/img/0_uee8onqy7l2gdq8q.png
 title: Extracting Essential Data from APIs with Go Structs
 description: Explore the power of Go Structs in simplifying data extraction from
   APIs. This blog post showcases a hands-on approach to using Go Structs for
   decoding API responses, focusing only on essential data, using the GitHub API
   as an example. It is a practical guide for developers aiming to streamline
   their data management process in Go.
-main-class: css
-color: "#637a91"
+main-class: go
+color: "#007d9c"
 tags:
-  - ""
+  - go
+  - golang
+  - json
+  - api
+  - extract
+  - unmarshal
+  - structs
 ---
 # Extracting Essential Data from APIs with Go Structs
 
