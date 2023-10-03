@@ -19,7 +19,13 @@ const MenuBar = ({ setIsMenuOpen, isMenuOpen }) => {
   useEffect(() => {
     setTheme(window.__theme)
     window.__onThemeChange = () => setTheme(window.__theme)
+
   }, [])
+
+  const handleThemeChange = () => {
+    window.__setPreferredTheme(isDarkMode ? 'light' : 'dark')
+    window.dispatchEvent(new Event('themeChanged'));
+  }
 
   const openMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -62,9 +68,7 @@ const MenuBar = ({ setIsMenuOpen, isMenuOpen }) => {
       <S.MenuBarGroup>
         <S.MenuBarItem
           title="Mudar o Tema"
-          onClick={() => {
-            window.__setPreferredTheme(isDarkMode ? 'light' : 'dark')
-          }}
+          onClick={handleThemeChange}
           className={theme}
           isDarkMode={isDarkMode}
         >
