@@ -32,7 +32,7 @@ module.exports = withPWA({
       },
       {
         source: '/discord',
-        destination: 'https://discord.gg/4vPe9UjTeq',
+        destination: 'https://discord.gg/fZJfrVgQDS',
         permanent: true
       },
       {
