@@ -45,7 +45,7 @@ func minhaRotinaConcorrente() {
 
 ### 1. Execução Assíncrona
 
-Imagine um servidor web que precisa atender várias requisições simultaneamente. Utilizando goroutines, podemos lidar com cada requisição de forma assíncrona, mantendo a capacidade de resposta do servidor mesmo sob carga pesada.
+Imagine um servidor que precisa atender várias requisições simultaneamente. Utilizando goroutines, podemos lidar com cada requisição de forma assíncrona, mantendo a capacidade de resposta do servidor mesmo sob carga pesada.
 
 ```go
 package main
@@ -133,4 +133,4 @@ func enviarMensagem(ch chan string) {
 
 ## Conclusão
 
-As goroutines e os canais são recursos poderosos em Go, proporcionando uma maneira eficiente e simples de trabalhar com concorrência. Ao integrá-los em seus projetos, você pode melhorar a eficiência, a escalabilidade e a capacidade de resposta do seu código. Este artigo apresentou conceitos básicos e exemplos práticos para inspirar o uso efetivo desses recursos em suas próprias aplicações em Go. Experimente, explore e descubra como a concorrência em Go pode transformar a maneira como você aborda problemas complexos.
+As goroutines e os canais são recursos poderosos em Go, proporcionando uma maneira eficiente e simples de trabalhar com concorrência. Ao integrá-los em seus projetos, você pode melhorar a eficiência, a escalabilidade e a capacidade de resposta do seu código. Este artigo apresentou conceitos básicos e exemplos práticos para inspirar o uso efetivo desses recursos em suas próprias aplicações em Go. Se surgirem dúvidas ou se você quiser compartilhar suas experiências, sinta-se à vontade para utilizar a seção de comentários abaixo.
