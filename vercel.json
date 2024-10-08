@@ -3,6 +3,8 @@
     { "source": "/todos-os-meus-links", "destination": "https://meus-links.miguelmachado.dev/", "permanent": true },
     { "source": "/meus-links", "destination": "https://meus-links.miguelmachado.dev/", "permanent": true },
     { "source": "/discord", "destination": "https://discord.gg/fZJfrVgQDS", "permanent": true },
+    { "source": "/youtube", "destination": "https://www.youtube.com/@oMigtito?sub_confirmation=1", "permanent": true },
+    { "source": "/instagram", "destination": "https://www.instagram.com/omigtito", "permanent": true },
     { "source": "/twitch", "destination": "https://twitch.tv/Migtito", "permanent": true }
   ]
 }
