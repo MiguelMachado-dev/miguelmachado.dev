@@ -36,6 +36,7 @@
     "styled-media-query": "^2.1.2"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "^7.30.0",
     "eslint-config-next": "^11.0.1",
@@ -50,7 +51,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "dev": "next dev",
+    "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
