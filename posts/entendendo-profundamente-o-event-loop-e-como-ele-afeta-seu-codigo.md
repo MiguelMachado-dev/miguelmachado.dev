@@ -163,8 +163,7 @@ Neste código, chamamos a função `readFileAsync` duas vezes dentro da função
 
 3. **Entenda a ordem de execução**: Código síncrono → Microtasks → Tasks regulares.
 
-4. **No Node.js, use `process.nextTick()` com moderação**: Embora seja a forma mais rápida de agendar um callback, o uso excessivo pode "starvar" o event loop, impedindo que outras fases sejam executadas.
-
+4. **No Node.js, use `process.nextTick()` com moderação**: Embora seja a forma mais rápida de agendar um callback, o uso excessivo pode prejudicar o event loop, impedindo que outras fases sejam executadas.
 5. **Conheça as diferenças entre ambientes**: O comportamento do event loop pode variar entre navegadores e versões do Node.js.
 
 ## Conclusão
