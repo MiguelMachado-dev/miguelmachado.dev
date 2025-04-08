@@ -24,11 +24,30 @@ category: javascript
 
 O event loop é uma das características mais poderosas e ao mesmo tempo complexas do JavaScript e do Node.js. Ele possibilita a execução de código assíncrono, ou seja, tarefas que não bloqueiam a execução do programa enquanto aguardam por alguma resposta. Esse comportamento é fundamental para aplicações com alto grau de concorrência e interatividade.
 
-Para entendermos melhor o event loop, é importante conhecer sua arquitetura básica. Ela pode ser dividida em três principais componentes:
+Para entendermos melhor o event loop, é importante conhecer sua arquitetura básica. É importante notar que o event loop tem implementações diferentes no navegador e no Node.js, embora o conceito fundamental seja o mesmo. Vamos analisar os componentes essenciais:
 
-1. **Thread**: A thread é a unidade fundamental de execução do programa. No Node.js, existe apenas uma única thread principal que executa todo o código.
+1. **Thread**: A thread é a unidade fundamental de execução do programa. Tanto no Node.js quanto nos navegadores, existe apenas uma única thread principal que executa todo o código JavaScript.
+
 2. **Call Stack**: A pilha de chamadas armazena todas as funções que estão sendo executadas no momento. Quando uma função é chamada, ela é empilhada na call stack; quando ela termina, é desempilhada.
-3. **Web APIs / Event Loop**: O event loop é a parte responsável pela execução das tarefas assíncronas. Ele fica ouvindo (ou "poll") as filas de tarefas e, sempre que uma delas estiver vazia, verifica se há novas tarefas para serem executadas.
+
+3. **Callback Queues**: Existem diferentes filas de callbacks para diferentes tipos de eventos assíncronos. Estas filas têm prioridades diferentes e são processadas em momentos específicos pelo event loop.
+
+4. **Event Loop**: O event loop é o mecanismo que constantemente monitora a call stack e as filas de callback, movendo funções das filas para a call stack quando esta está vazia.
+
+## Navegador vs Node.js: Implementações Diferentes
+
+É crucial entender que o event loop tem implementações diferentes nos navegadores e no Node.js:
+
+**Navegadores**:
+- Utilizam Web APIs (como setTimeout, fetch, DOM events)
+- As tarefas assíncronas são gerenciadas por estas APIs e depois enviadas para a Task Queue
+- Possui uma implementação mais simples com Task Queue e Microtask Queue
+
+**Node.js**:
+- Utiliza a biblioteca libuv para implementar o event loop
+- Possui fases específicas para gerenciar diferentes tipos de eventos
+- Oferece APIs adicionais como `process.nextTick()` e `setImmediate()`
+
 ## Como o Event Loop funciona
 
 Para ilustrar melhor como o event loop funciona, podemos analisar um exemplo simples em JavaScript:
@@ -43,7 +62,7 @@ setTimeout(() => {
 console.log('Fim');
 ```
 
-Neste código, esperamos que a saída seja:
+Quando executamos o programa, a saída será:
 
 ```
 Início
@@ -51,27 +70,54 @@ Fim
 Timeout
 ```
 
-No entanto, quando executamos o programa, descobrimos algo interessante:
+Isso acontece porque o `setTimeout`, mesmo com delay 0, envia o callback para a fila de tarefas, que só será executado depois que o código síncrono for concluído.
+
+### Entendendo as Microtasks
+
+Um conceito crucial frequentemente negligenciado é o de microtasks. As microtasks (como Promises) têm prioridade sobre as tarefas regulares (como setTimeout) e são executadas imediatamente após o código síncrono, antes do próximo ciclo do event loop:
+
+```javascript
+console.log('Início');
+
+setTimeout(() => {
+  console.log('Timeout');
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log('Promise');
+});
+
+console.log('Fim');
+```
+
+A saída deste código será:
 
 ```
 Início
 Fim
+Promise
+Timeout
 ```
 
-Onde fica o `Timeout`? Para entender o que está acontecendo aqui, precisamos conhecer as fases do event loop.
+Observe como a Promise é executada antes do setTimeout, mesmo que o setTimeout tenha sido chamado primeiro. Isso demonstra a ordem de prioridade:
 
-### Fases do Event Loop
+1. Código síncrono (call stack)
+2. Microtasks (Promises, queueMicrotask, process.nextTick no Node.js)
+3. Tasks regulares (setTimeout, setInterval, I/O, etc.)
 
-O evento loop possui seis principais fases, cada uma responsável por processar um tipo específico de tarefa. As fases são executadas em ordem e repetidas continuamente até que todas as filas estejam vazias:
+### Fases do Event Loop no Node.js
 
-1. **Timers**: Executa callbacks agendados por `setTimeout` ou `setInterval`.
-2. **Pending IO Events**: Executa callbacks para eventos de E/S pendentes, como leitura ou escrita em arquivos.
-3. **Poll**: Verifica se há novas tarefas para serem executadas nas filas.
-4. **Check**: Executa callbacks agendados por `setImmediate`.
-5. **Close Callbacks**: Executa callbacks para eventos de fechamento de conexões.
-6. **Intervals**: Executa callbacks agendados por `setInterval`.
+O event loop do Node.js possui as seguintes fases principais, que são executadas em ordem sequencial:
 
-Voltando ao exemplo anterior, o que ocorre é que a função `setTimeout` agenda uma tarefa na fase "Timers" do event loop. Como essa fase é executada após as fases "Poll", "Check" e "Close Callbacks", a saída do `console.log('Fim')` aparece antes da mensagem de timeout.
+1. **Timers**: Executa callbacks agendados por `setTimeout` e `setInterval`.
+2. **Pending callbacks**: Executa callbacks de operações de I/O que foram adiados para a próxima iteração do loop.
+3. **Poll**: Verifica se há novos eventos de I/O e executa seus callbacks. Pode bloquear temporariamente aguardando novos eventos.
+4. **Check**: Executa callbacks agendados por `setImmediate()`.
+5. **Close callbacks**: Executa callbacks de eventos de fechamento, como `socket.on('close', ...)`.
+
+Além dessas fases, o Node.js tem duas filas especiais:
+- `process.nextTick()`: Executa callbacks imediatamente após a operação atual, antes de qualquer outra fase do event loop
+- Microtasks de Promises: Executadas após `process.nextTick()` e antes da próxima fase do event loop
 
 ## Impacto no seu código
 
@@ -101,9 +147,25 @@ async function processFiles() {
     console.error(err);
   }
 }
+
+processFiles();
 ```
 
-Neste código, chamamos a função `readFileAsync` duas vezes dentro da função `processFiles`. Como essa função é assíncrona, ela não bloqueia a execução do programa enquanto espera pelo resultado da leitura dos arquivos. Em vez disso, o event loop mantém uma fila de tarefas pendentes e volta a executar a função `processFiles` assim que as duas leituras estiverem concluídas.
+Neste código, chamamos a função `readFileAsync` duas vezes dentro da função `processFiles`. Como essa função é assíncrona, ela não bloqueia a execução do programa enquanto espera pelo resultado da leitura dos arquivos. O event loop gerencia essas operações de I/O através da fase "Poll" e, quando cada leitura é concluída, o respectivo callback é executado.
+
+É importante notar que, com o uso de `async/await`, o segundo arquivo só começará a ser lido depois que o primeiro estiver completo. Isso ocorre porque `await` pausa a execução da função assíncrona até que a Promise seja resolvida.
+
+## Dicas práticas para trabalhar com o Event Loop
+
+1. **Evite bloquear o event loop**: Operações síncronas pesadas podem bloquear a thread principal e impedir o processamento de outras tarefas.
+
+2. **Use microtasks para tarefas de alta prioridade**: Quando precisar que algo seja executado o mais rápido possível após o código atual, use Promises ou `queueMicrotask()`.
+
+3. **Entenda a ordem de execução**: Código síncrono → Microtasks → Tasks regulares.
+
+4. **No Node.js, use `process.nextTick()` com moderação**: Embora seja a forma mais rápida de agendar um callback, o uso excessivo pode "starvar" o event loop, impedindo que outras fases sejam executadas.
+
+5. **Conheça as diferenças entre ambientes**: O comportamento do event loop pode variar entre navegadores e versões do Node.js.
 
 ## Conclusão
 
