@@ -28,8 +28,7 @@ Para entendermos melhor o event loop, é importante conhecer sua arquitetura bá
 
 1. **Thread**: A thread é a unidade fundamental de execução do programa. No Node.js, existe apenas uma única thread principal que executa todo o código.
 2. **Call Stack**: A pilha de chamadas armazena todas as funções que estão sendo executadas no momento. Quando uma função é chamada, ela é empilhada na call stack; quando ela termina, é desempilhada.
-3. **Web APIs / Event Loop**: O event loop é a parte responsável pela execução das tarefas assíncronas. Ele fica ouvindo (ou "pollda") as filas de tarefas e, sempre que uma delas estiver vazia, verifica se há novas tarefas para serem executadas.
-
+3. **Web APIs / Event Loop**: O event loop é a parte responsável pela execução das tarefas assíncronas. Ele fica ouvindo (ou "poll") as filas de tarefas e, sempre que uma delas estiver vazia, verifica se há novas tarefas para serem executadas.
 ## Como o Event Loop funciona
 
 Para ilustrar melhor como o event loop funciona, podemos analisar um exemplo simples em JavaScript:
