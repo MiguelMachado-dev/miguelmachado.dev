@@ -19,19 +19,19 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
-          cache: 'npm'
+          cache: 'yarn'
 
       - name: Install dependencies
-        run: npm ci
+        run: yarn install --frozen-lockfile
 
       - name: Linting
-        run: npm run lint
+        run: yarn lint
 
       - name: Testing
-        run: npm run test:ci
+        run: yarn test:ci
 
       - name: Build
-        run: npm run build
+        run: yarn build
 
       - name: Dependabot metadata
         id: metadata
@@ -42,10 +42,3 @@ jobs:
       - name: Auto-approve PR
         uses: hmarr/auto-approve-action@v3
         if: ${{ steps.metadata.outputs.update-type != 'version-update:semver-major' }}
-
-      - name: Enable auto-merge
-        if: ${{ steps.metadata.outputs.update-type != 'version-update:semver-major' }}
-        run: gh pr merge --auto --squash "$PR_URL"
-        env:
-          PR_URL: ${{ github.event.pull_request.html_url }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
