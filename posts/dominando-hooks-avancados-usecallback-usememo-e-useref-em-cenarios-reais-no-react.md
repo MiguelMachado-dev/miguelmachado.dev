@@ -19,6 +19,8 @@ category: react
 
 ## Introdução: Além dos Hooks Básicos
 
+![Dominando Hooks Avançados](/assets/img/dominando-hooks-avan-ados-usecallback-usememo-e-useref-em-cen-rios-reais-no-react.png)
+
 Se você já trabalha com React há algum tempo, `useState` e `useEffect` provavelmente são seus companheiros diários. Eles formam a base da lógica de estado e ciclo de vida em componentes funcionais. No entanto, à medida que as aplicações crescem em complexidade, surgem desafios de performance, principalmente relacionados a re-renderizações desnecessárias.
 
 É aqui que entram os Hooks "avançados": `useCallback`, `useMemo` e `useRef`. Eles não são necessariamente mais complexos de usar, mas seu propósito principal é a **otimização** e o gerenciamento de cenários específicos que os Hooks básicos não cobrem diretamente.
