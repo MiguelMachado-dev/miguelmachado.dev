@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2025-04-08 11:50:57
+date: 2025-04-09 18:00:57
 image: /assets/img/dominando-hooks-avan-ados-usecallback-usememo-e-useref-em-cen-rios-reais-no-react.png
 title: "Dominando Hooks Avançados: useCallback, useMemo e useRef em Cenários Reais no React"
 description: "Vá além do useState e useEffect! Aprenda a otimizar suas aplicações React com exemplos práticos de useCallback, useMemo e useRef em TypeScript, entendendo quando e por que usá-los para evitar re-renderizações desnecessárias e gerenciar referências."
