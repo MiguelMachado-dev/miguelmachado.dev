@@ -133,13 +133,15 @@ export const MainContent = styled.section`
   }
 
   code {
-    background: #3d375e7f;
+    background: #011627;
     color: white;
     padding: 0.1em;
     border-radius: 0.3em;
     white-space: normal;
     overflow-wrap: break-word;
-    font-family: 'MonoLisa-Regular', Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+    font-family: 'MonoLisa-Regular', 'Fira Code', 'JetBrains Mono', Consolas,
+      Monaco, Andale Mono, Ubuntu Mono, monospace;
+    font-size: 1rem;
   }
 
   pre > code {
