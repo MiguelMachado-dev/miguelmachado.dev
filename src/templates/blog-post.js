@@ -9,6 +9,7 @@ import { timeToRead } from 'lib/utils'
 import Comments from 'components/Comments'
 import RecommendedPosts from 'components/RecommendedPosts'
 import PostTag from 'components/PostTag'
+import ShareButtons from 'components/ShareButtons'
 
 import {
   PostHeader,
@@ -21,11 +22,10 @@ import {
 
 const BlogPost = ({ post }) => {
   useEffect(() => {
-    const highlight = async () => {
-      await Prism.highlightAll(); // <--- prepare Prism
-    };
-    highlight(); // <--- call the async function
-  }, [post]); // <--- run when post updates
+    Prism.highlightAll() // <--- directly call Prism.highlightAll
+  }, [post]) // <--- run when post updates
+
+  const postUrl = `https://miguelmachado.dev/${post.slug}`
 
   return (
     <>
@@ -33,12 +33,14 @@ const BlogPost = ({ post }) => {
         title={`${post.frontmatter.title} - Miguel Machado`}
         description={post.frontmatter.description}
         openGraph={{
-          url: `https://miguelmachado.dev/${post.slug}`,
+          url: postUrl,
           title: `${post.frontmatter.title} - Miguel Machado`,
           description: post.frontmatter.description,
           images: [
             {
-              url: `https://og-image-service.miguelmachado.dev/${encodeURIComponent(post.frontmatter.title)}.png?v=404`,
+              url: `https://og-image-service.miguelmachado.dev/${encodeURIComponent(
+                post.frontmatter.title
+              )}.png`,
               alt: `${post.frontmatter.title}`
             }
           ],
@@ -64,6 +66,7 @@ const BlogPost = ({ post }) => {
       <MainContent>
         <div dangerouslySetInnerHTML={{ __html: post.content }} />
       </MainContent>
+      <ShareButtons title={post.frontmatter.title} url={postUrl} />
       <Comments />
       <RecommendedPosts next={post.nextPost} previous={post.prevPost} />
     </>
