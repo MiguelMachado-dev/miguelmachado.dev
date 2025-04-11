@@ -7,7 +7,7 @@ const Avatar = () => {
     <S.AvatarWrapper>
       <Image
         src="https://avatars.githubusercontent.com/u/29252011?v=4"
-        alt="Uma foto minha tirada de frente, estou com uma blusa preta e um semi sorriso."
+        alt="Selfie de Miguel no espelho, com visual estiloso, tattoos à mostra e camiseta com arte gráfica."
         width={64}
         height={64}
         quality={100}

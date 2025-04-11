@@ -1,7 +1,7 @@
 export const BLOG_TITLE = 'Miguel Machado'
 
 export const BLOG_SUBTITLE =
-  'Um blog de um Engenheiro de Software, apaixonado por Javascript, React, GraphQL, Golang, Kotlin e muito mais.'
+  'Escrevo sobre desenvolvimento web, backend e minhas experiências no mundo dos games. TypeScript, React, Next.js, Golang, Kotlin, GraphQL e C# fazem parte do meu stack.'
 
 export const BLOG_DESCRIPTION = [BLOG_TITLE, BLOG_SUBTITLE].join(' | ')
 
@@ -14,4 +14,4 @@ export const BLOG_URL = 'https://miguelmachado.dev'
 export const BLOG_AUTHOR_POSITION = 'Software Engineer'
 
 export const BLOG_AUTHOR_DESCRIPTION =
-  'Escrevo sobre frontend, backend e homelab.'
+  'Escrevo sobre desenvolvimento web, backend e minhas experiências no mundo dos games. TypeScript, React, Next.js, Golang, Kotlin, GraphQL e C# fazem parte do meu stack.'
