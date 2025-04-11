@@ -1,8 +1,8 @@
 ---
 layout: post
 date: 2025-04-11 14:59:41
-title: Type Assertion em Golang: Desvendando o poder das Interfaces
-description: Aprenda o que é Type Assertion em Go (Golang), por que é útil para trabalhar com interfaces, como usar com segurança através do "comma ok idiom", e veja analogias e exemplos práticos do mundo real.
+title: "Type Assertion em Golang: Desvendando o poder das Interfaces"
+description: 'Aprenda o que é Type Assertion em Go (Golang), por que é útil para trabalhar com interfaces, como usar com segurança através do "comma ok idiom", e veja analogias e exemplos práticos do mundo real.'
 main-class: go
 color: "#007d9c"
 tags:
