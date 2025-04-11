@@ -29,10 +29,7 @@ function App({ Component, pageProps }) {
       <Head>
         <title>Miguel Machado</title>
         <link rel="shortcut icon" href="/assets/img/mmcoding-icon.png" />
-        <link
-          rel="apple-touch-icon"
-          href="/assets/img/mmcoding-icon.png"
-        />
+        <link rel="apple-touch-icon" href="/assets/img/mmcoding-icon.png" />
         <meta name="theme-color" content="#06092B" />
         <meta
           name="google-site-verification"
@@ -43,13 +40,10 @@ function App({ Component, pageProps }) {
           content="Desenvolvedor Front End do Brasil, escrevo sobre JavaScript, CSS, Next.JS e muito mais! Vercel Community Leader!"
         />
         <link
-          href="https://unpkg.com/prism-theme-night-owl@1.4.0/build/style.css"
+          href="https://unpkg.com/prism-theme-night-owl@1.4.0/build/no-italics.css"
           rel="stylesheet"
         />
-        <link
-          href="https://mastodon.social/@theMigtito"
-          rel="me"
-        />
+        <link href="https://mastodon.social/@theMigtito" rel="me" />
         <link rel="manifest" href="/manifest.json" />
       </Head>
       <DefaultSeo {...SEO} />
