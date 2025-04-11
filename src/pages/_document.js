@@ -1,5 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
+import Script from 'next/script'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -35,7 +36,7 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
           {/* <script type="text/javascript" src="/libs/prism-go.min.js"></script> */}
-          <script type="text/javascript" src="/libs/prism.js"></script>
+          <Script src="/libs/prism.js" strategy="beforeInteractive" />
           <script
             dangerouslySetInnerHTML={{
               __html: `
