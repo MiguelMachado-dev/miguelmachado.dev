@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "author": "Miguel Machado <hello@miguelmachado.dev>",
   "dependencies": {
-    "@babel/core": "^7.14.6",
+    "@babel/core": "^7.26.10",
     "@giscus/react": "^2.3.0",
     "@openlab/vercel-netlify-cms-github": "^1.1.1",
     "algoliasearch": "^4.10.2",
