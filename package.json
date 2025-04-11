@@ -18,7 +18,7 @@
     "next-seo": "^4.26.0",
     "nextjs-progressbar": "^0.0.11",
     "preact": "^10.26.5",
-    "preact-render-to-string": "^5.1.19",
+    "preact-render-to-string": "^6.5.13",
     "prism-theme-night-owl": "1.4.0",
     "prismjs": "^1.30.0",
     "react": "^17.0.1",
