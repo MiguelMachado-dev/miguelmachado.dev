@@ -17,7 +17,7 @@ tags:
 category: react
 ---
 
-## Introdução: Além dos Hooks Básicos
+# Introdução: Além dos Hooks Básicos
 
 ![Dominando Hooks Avançados](/assets/img/dominando-hooks-avan-ados-usecallback-usememo-e-useref-em-cen-rios-reais-no-react.png)
 

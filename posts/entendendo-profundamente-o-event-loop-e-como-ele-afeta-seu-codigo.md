@@ -18,7 +18,7 @@ tags:
 category: javascript
 ---
 
-## Introdução ao Event Loop
+# Introdução ao Event Loop
 
 ![Entendendo profundamente o event loop e como ele afeta seu código](/assets/img/entendendo-profundamente-o-event-loop-e-como-ele-afeta-seu-codigo.png)
 

@@ -14,13 +14,13 @@ tags:
   - boas práticas go
 ---
 
-### Introdução: O Mundo Flexível das Interfaces em Go
+# Introdução: O Mundo Flexível das Interfaces em Go
 
 Go (ou Golang) é uma linguagem estaticamente tipada, o que significa que o tipo de uma variável é conhecido em tempo de compilação. No entanto, Go também oferece um poderoso mecanismo de flexibilidade através das **interfaces**. Uma interface define um conjunto de métodos que um tipo concreto *deve* implementar.
 
 Variáveis do tipo interface podem armazenar qualquer valor concreto que satisfaça essa interface. Isso é fantástico para escrever código polimórfico e desacoplado. Mas e se você tiver uma variável de interface e precisar acessar o valor *concreto* original, com seus próprios métodos e campos específicos, que não fazem parte da interface? É aqui que entra a **Type Assertion**.
 
-### O que é Type Assertion?
+## O que é Type Assertion?
 
 Type assertion em Go é um mecanismo que permite verificar o tipo concreto subjacente de um valor armazenado em uma variável de interface. É importante entender que Type Assertion só pode ser aplicada em variáveis de interface, não em variáveis de tipos concretos.
 
