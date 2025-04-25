@@ -68,7 +68,7 @@ npm install --save @protobuf-ts/runtime
 
 Certifique-se de que os executáveis estejam no PATH do sistema para que o compilador protoc possa encontrá-los.
 
-## Exemplo Prático: Definindo e Usando uma Mensagem
+## Exemplo Prático: Ciclo completo de uso do Protobuf
 
 ### 1. Definindo o Schema (`pessoa.proto`)
 ```protobuf
