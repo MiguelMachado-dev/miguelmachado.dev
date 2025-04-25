@@ -223,10 +223,13 @@ func main() {
 }
 ```
 
-| Formato   | Tamanho (bytes) | Tempo de serialização |
-|-----------|-----------------|-----------------------|
-| JSON      | 124             | 120µs                 |
-| Protobuf  | 45              | 30µs                  |
+**Resultados do Benchmark:**
+*   **JSON:**
+    *   Tamanho: 124 bytes
+    *   Tempo de serialização: 120µs
+*   **Protobuf:**
+    *   Tamanho: 45 bytes
+    *   Tempo de serialização: 30µs
 
 > **NOTA:** Este benchmark é uma demonstração simplificada que compara a serialização de uma estrutura básica. Em casos reais, com estruturas mais complexas e volumes maiores de dados, as diferenças tendem a ser ainda mais significativas. Para avaliações de performance mais precisas, recomenda-se executar testes com dados representativos da sua aplicação.
 
