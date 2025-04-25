@@ -1,10 +1,10 @@
 ---
 layout: post
 date: 2025-04-25 12:00:14
-title: "Protocol Buffers (Protobuf): O Que É e Seus Benefícios para Desenvolvedores"
+title: "Protocol Buffers (Protobuf): O que é e seus benefícios para desenvolvedores"
 description: Descubra o que são Protocol Buffers (Protobuf), a tecnologia de serialização de dados do Google. Aprenda seus benefícios, como performance, tipagem forte e evolução de schema, e veja exemplos práticos de como utilizá-lo em Go e TypeScript.
 main-class: proto
-color: "#38bdf8"
+color: "#30638e"
 tags:
   - protobuf
   - serialização

@@ -23,6 +23,7 @@
           "markdown",
           "bash",
           "go",
+          "protobuf",
           "yaml"
         ],
         "plugins": ["line-numbers"],
