@@ -76,31 +76,38 @@ syntax = "proto3";
 package tutorial;
 option go_package = "example.com/protobuf-blog/tutorial";
 
+// Define a mensagem Pessoa
 message Pessoa {
+  // Campos da mensagem com tipos e números únicos (tags)
   string nome = 1;
   int32 id = 2;
   string email = 3;
 
+  // Enum para tipos de telefone
   enum TipoTelefone {
     CELULAR = 0;
     CASA = 1;
     TRABALHO = 2;
   }
 
+  // Mensagem aninhada para números de telefone
   message NumeroTelefone {
     string numero = 1;
     TipoTelefone tipo = 2;
   }
 
+  // Campo repetido (lista) de números de telefone
   repeated NumeroTelefone telefones = 4;
 }
 ```
 
 ### 2. Compilando o Schema
 ```bash
+# Para Go
 protoc --proto_path=. --go_out=. --go_opt=module=example.com/protobuf-blog pessoa.proto
 ```
 ```bash
+# Para TypeScript
 protoc \
   --plugin="protoc-gen-ts=./node_modules/.bin/protoc-gen-ts" \
   --ts_out="." \
@@ -116,61 +123,104 @@ package main
 import (
     "fmt"
     "log"
-    "google.golang.org/protobuf/proto"
+    // Importa o pacote protobuf gerado a partir de pessoa.proto
     "example.com/protobuf-blog/tutorial"
+    // Importa a biblioteca runtime do Protobuf para Go, necessária para Marshal/Unmarshal
+    "google.golang.org/protobuf/proto"
 )
 func main() {
+    // Cria uma instância da struct 'Pessoa' que foi gerada pelo protoc
     pessoa := &tutorial.Pessoa{
-        Id:    123,
-        Nome:  "João Silva",
-        Email: "joao.silva@example.com",
-        Telefones: []*tutorial.Pessoa_NumeroTelefone{
-            {Numero: "11-99999-8888", Tipo: tutorial.Pessoa_CELULAR},
+        Id:    123,                    // Define o campo 'id'
+        Nome:  "João Silva",           // Define o campo 'nome'
+        Email: "joao.silva@example.com", // Define o campo 'email'
+        Telefones: []*tutorial.Pessoa_NumeroTelefone{ // Cria uma slice (lista) de 'NumeroTelefone'
+            {
+                Numero: "11-99999-8888",           // Define o número
+                Tipo: tutorial.Pessoa_CELULAR, // Define o tipo usando o enum gerado
+            },
         },
     }
+
+    // Serializa a instância 'pessoa' para o formato binário Protobuf.
+    // 'proto.Marshal' retorna um []byte e um erro.
     dados, err := proto.Marshal(pessoa)
     if err != nil {
-        log.Fatalf("%v", err)
+        // Se ocorrer um erro na serialização, registra e termina o programa
+        log.Fatalf("Erro ao serializar: %v", err)
     }
-    fmt.Println(len(dados))
+
+    // Imprime o tamanho dos dados binários resultantes (em bytes)
+    fmt.Println("Tamanho dos dados serializados (bytes):", len(dados))
+
+    // Cria uma nova instância vazia de 'Pessoa' que receberá os dados desserializados
     pessoaRecebida := &tutorial.Pessoa{}
+
+    // Desserializa os dados binários ('dados') de volta para a struct 'pessoaRecebida'.
+    // 'proto.Unmarshal' recebe os bytes e um ponteiro para a struct de destino.
     if err := proto.Unmarshal(dados, pessoaRecebida); err != nil {
-        log.Fatalf("%v", err)
+        // Se ocorrer um erro na desserialização, registra e termina o programa
+        log.Fatalf("Erro ao desserializar: %v", err)
     }
-    fmt.Println(pessoaRecebida.GetId())
-    fmt.Println(pessoaRecebida.GetNome())
-    fmt.Println(pessoaRecebida.GetEmail())
+
+    // Acessa os campos da struct 'pessoaRecebida' que foi preenchida pela desserialização.
+    // Os getters (GetId, GetNome, etc.) são gerados pelo protoc.
+    fmt.Println("ID:", pessoaRecebida.GetId())
+    fmt.Println("Nome:", pessoaRecebida.GetNome())
+    fmt.Println("Email:", pessoaRecebida.GetEmail())
+
+    // Verifica se a lista de telefones não está vazia antes de acessá-la
     if len(pessoaRecebida.GetTelefones()) > 0 {
+        // Acessa o primeiro telefone na slice 'Telefones'
         tel := pessoaRecebida.GetTelefones()[0]
-        fmt.Println(tel.GetNumero(), tel.GetTipo())
+        // Imprime o número e o tipo do telefone, usando os getters gerados
+        fmt.Printf("Telefone: %s (%s)\n", tel.GetNumero(), tel.GetTipo())
     }
 }
 ```
 
 **TypeScript**
 ```typescript
+// Importa a classe 'Pessoa' e o enum 'Pessoa_TipoTelefone' do arquivo 'pessoa.ts' gerado pelo protoc-gen-ts
 import { Pessoa, Pessoa_TipoTelefone } from "./pessoa";
+// Importa a interface/tipo 'Pessoa_NumeroTelefone' (mensagem aninhada) do mesmo arquivo gerado
 import { Pessoa_NumeroTelefone } from "./pessoa";
 
+// Cria um objeto literal TypeScript que corresponde à estrutura da mensagem 'Pessoa' definida no .proto
 const pessoaData: Pessoa = {
-    id: 123,
-    nome: "João Silva",
-    email: "joao.silva@example.com",
-    telefones: [
+    id: 123,                       // Define a propriedade 'id'
+    nome: "João Silva",              // Define a propriedade 'nome'
+    email: "joao.silva@example.com", // Define a propriedade 'email'
+    telefones: [                   // Cria um array para a propriedade 'telefones'
+        // Cria um objeto para o número de telefone.
+        // 'as Pessoa_NumeroTelefone' é uma asserção de tipo para garantir a conformidade com a interface gerada.
         { numero: "11-99999-8888", tipo: Pessoa_TipoTelefone.CELULAR } as Pessoa_NumeroTelefone,
     ],
 };
 
+// Serializa o objeto 'pessoaData' para o formato binário Protobuf.
+// O método estático 'toBinary' é gerado na classe 'Pessoa' e retorna um Uint8Array.
 const dadosBin: Uint8Array = Pessoa.toBinary(pessoaData);
-console.log(dadosBin.length);
 
+// Imprime o tamanho do array de bytes resultante
+console.log("Tamanho dos dados serializados (bytes):", dadosBin.length);
+
+// Desserializa os dados binários ('dadosBin') de volta para um objeto 'Pessoa'.
+// O método estático 'fromBinary' é gerado na classe 'Pessoa'.
 const pessoaRecebida: Pessoa = Pessoa.fromBinary(dadosBin);
-console.log(pessoaRecebida.id);
-console.log(pessoaRecebida.nome);
-console.log(pessoaRecebida.email);
+
+// Acessa as propriedades do objeto 'pessoaRecebida' que foi criado a partir dos dados binários
+console.log("ID:", pessoaRecebida.id);
+console.log("Nome:", pessoaRecebida.nome);
+console.log("Email:", pessoaRecebida.email);
+
+// Verifica se o array 'telefones' não está vazio
 if (pessoaRecebida.telefones.length) {
+    // Acessa o primeiro objeto de telefone no array
     const tel = pessoaRecebida.telefones[0];
-    console.log(tel.numero, Pessoa_TipoTelefone[tel.tipo]);
+    // Imprime o número e o tipo do telefone.
+    // 'Pessoa_TipoTelefone[tel.tipo]' converte o valor numérico do enum de volta para sua representação de string (ex: 'CELULAR').
+    console.log(`Telefone: ${tel.numero} (${Pessoa_TipoTelefone[tel.tipo]})`);
 }
 ```
 
