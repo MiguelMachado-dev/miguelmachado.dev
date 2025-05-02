@@ -58,6 +58,5 @@ export function getAllPosts() {
       new Date(post1.date) > new Date(post2.date) ? -1 : 1
     )
 
-  console.log('[getAllPosts] Found posts:', posts)
   return posts
 }
