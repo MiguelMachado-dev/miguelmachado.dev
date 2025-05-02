@@ -10,21 +10,23 @@ const Post = ({ posts }) => {
   return <BlogList posts={posts} />
 }
 
-export async function getStaticProps() {
-  const posts = getAllPosts()
+export async function getStaticProps({ locale }) {
+  const allPosts = getAllPosts()
+
+  const postsForLocale = allPosts.filter(post => post.locale === locale)
 
   if (process.env.NODE_ENV !== 'development') {
-    await generateSitemap(posts)
+    await generateSitemap(allPosts)
 
-    const rss = await generateRss(posts)
+    const rss = await generateRss(allPosts)
     fs.writeFileSync('./public/feed.xml', rss)
 
-    await buildAlgoliaIndexes(posts)
+    await buildAlgoliaIndexes(allPosts)
   }
 
   return {
     props: {
-      posts
+      posts: postsForLocale
     }
   }
 }
