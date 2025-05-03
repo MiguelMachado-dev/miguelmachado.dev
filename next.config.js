@@ -1,7 +1,8 @@
 module.exports = {
   i18n: {
     locales: ['en', 'br'],
-    defaultLocale: 'br'
+    defaultLocale: 'br',
+    localeDetection: true
   },
   webpack: (config, { dev, isServer }) => {
     // Replace React with Preact only in client production build
