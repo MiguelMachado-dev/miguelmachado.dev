@@ -1,12 +1,12 @@
 import { BLOG_URL } from './constants'
-
-const globby = require('globby')
+import { getAllPosts } from './api' // We might need allPosts directly here
+// Use require for CommonJS modules
 const { SitemapStream, streamToPromise } = require('sitemap')
 const { Readable } = require('stream')
 const fs = require('fs')
 
-// pages that should not be in the sitemap
-const blocklist = ['/404']
+// pages that should not be in the sitemap (adjust if needed)
+// const blocklist = ['/404'] // Example, might need /en/404 etc. if you have custom 404 pages per locale
 
 export async function generateSitemap(posts) {
   if (process.env.NODE_ENV === 'development') {
@@ -14,31 +14,23 @@ export async function generateSitemap(posts) {
   }
 
   const baseUrl = BLOG_URL
-  const pages = await globby([
-    'src/pages/**/*{.js}',
-    '!src/pages/**/[*',
-    '!src/pages/_*.js',
-    '!src/pages/api'
-  ])
+  // Define locales explicitly, matching next.config.js
+  const locales = ['en', 'br']
 
-  // normal page routes
-  const pageLinks = pages
-    .map(page => {
-      const path = page
-        .replace('pages', '')
-        .replace('.js', '')
-        .replace('src/', '')
-      return path === '/index'
-        ? { url: '/', changefreq: 'daily', priority: 0.7 }
-        : { url: path, changefreq: 'daily', priority: 0.7 }
-    })
-    .filter(page => !blocklist.includes(page.url))
+  // Manually define base page routes per locale
+  const pageLinks = []
+  locales.forEach(locale => {
+    pageLinks.push({ url: `/${locale}`, changefreq: 'daily', priority: 0.7 }) // Add homepage for each locale
+    // Add other static pages here if needed, e.g., /en/about, /br/about
+  })
 
-  // post routes
+  // post routes - use locale and slug
   const postLinks = posts.map(post => ({
-    url: `/${post.slug}`,
+    url: `/${post.locale}/${post.slug}`, // <-- Include locale here
     changefreq: 'daily',
     priority: 0.7
+    // You could also add lastmod based on post.date if desired
+    // lastmod: new Date(post.date).toISOString(),
   }))
 
   const links = [...pageLinks, ...postLinks]

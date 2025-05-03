@@ -8,6 +8,7 @@ import { UpArrowAlt as Arrow } from '@styled-icons/boxicons-regular/UpArrowAlt'
 import { LightBulb as Light } from '@styled-icons/entypo/LightBulb'
 import { Menu } from '@styled-icons/boxicons-regular/Menu'
 
+import LanguageSwitcher from 'components/LanguageSwitcher'
 import * as S from './styled'
 
 const MenuBar = ({ setIsMenuOpen, isMenuOpen }) => {
@@ -19,12 +20,11 @@ const MenuBar = ({ setIsMenuOpen, isMenuOpen }) => {
   useEffect(() => {
     setTheme(window.__theme)
     window.__onThemeChange = () => setTheme(window.__theme)
-
   }, [])
 
   const handleThemeChange = () => {
     window.__setPreferredTheme(isDarkMode ? 'light' : 'dark')
-    window.dispatchEvent(new Event('themeChanged'));
+    window.dispatchEvent(new Event('themeChanged'))
   }
 
   const openMenu = () => {
@@ -66,6 +66,7 @@ const MenuBar = ({ setIsMenuOpen, isMenuOpen }) => {
       </S.MenuBarGroupMobile>
 
       <S.MenuBarGroup>
+        <LanguageSwitcher />
         <S.MenuBarItem
           title="Mudar o Tema"
           onClick={handleThemeChange}

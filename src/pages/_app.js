@@ -13,6 +13,7 @@ import GlobalStyles from 'styles/global'
 
 function App({ Component, pageProps }) {
   const router = useRouter()
+  const { locale, defaultLocale, locales, asPath } = router
 
   useEffect(() => {
     const handleRouteChange = url => {
@@ -23,6 +24,24 @@ function App({ Component, pageProps }) {
       router.events.off('routeChangeComplete', handleRouteChange)
     }
   }, [router.events])
+
+  // Extract the path without the locale prefix for use in hreflang tags
+  const getPathWithoutLocale = () => {
+    if (asPath === '/') return ''
+
+    // Check if the path starts with a locale
+    const pathWithoutQuery = asPath.split('?')[0]
+    const segments = pathWithoutQuery.split('/')
+
+    // If the first segment is a locale, remove it
+    if (segments.length > 1 && locales.includes(segments[1])) {
+      return pathWithoutQuery.replace(`/${segments[1]}`, '') || ''
+    }
+
+    return pathWithoutQuery
+  }
+
+  const pathWithoutLocale = getPathWithoutLocale()
 
   return (
     <>
@@ -45,8 +64,47 @@ function App({ Component, pageProps }) {
         />
         <link href="https://mastodon.social/@theMigtito" rel="me" />
         <link rel="manifest" href="/manifest.json" />
+
+        {/* Add hreflang tags for SEO */}
+        <link
+          rel="alternate"
+          hrefLang="br"
+          href={`https://miguelmachado.dev/br${pathWithoutLocale}`}
+        />
+        <link
+          rel="alternate"
+          hrefLang="en"
+          href={`https://miguelmachado.dev/en${pathWithoutLocale}`}
+        />
+        <link
+          rel="alternate"
+          hrefLang="x-default"
+          href={`https://miguelmachado.dev/br${pathWithoutLocale}`}
+        />
+
+        {/* Add canonical link with proper locale prefix */}
+        <link
+          rel="canonical"
+          href={`https://miguelmachado.dev/${locale}${pathWithoutLocale}`}
+        />
       </Head>
-      <DefaultSeo {...SEO} />
+      <DefaultSeo
+        {...SEO}
+        languageAlternates={[
+          {
+            hrefLang: 'en',
+            href: `https://miguelmachado.dev/en${pathWithoutLocale}`
+          },
+          {
+            hrefLang: 'br',
+            href: `https://miguelmachado.dev/br${pathWithoutLocale}`
+          },
+          {
+            hrefLang: 'x-default',
+            href: `https://miguelmachado.dev/br${pathWithoutLocale}`
+          }
+        ]}
+      />
       <GlobalStyles />
       <Layout>
         <NextNProgress
