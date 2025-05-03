@@ -4,6 +4,7 @@
   "description": "My personal blog on miguelmachado.dev",
   "version": "1.0.0",
   "author": "Miguel Machado <hello@miguelmachado.dev>",
+  "packageManager": "yarn@1.22.22",
   "dependencies": {
     "@babel/core": "^7.14.6",
     "@giscus/react": "^2.3.0",
