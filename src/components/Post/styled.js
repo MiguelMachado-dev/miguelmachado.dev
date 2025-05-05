@@ -18,7 +18,7 @@ export const PostWrapper = styled.section`
   box-shadow: var(--card-shadow);
   border: 1px solid var(--borders);
   overflow: hidden;
-  
+
   &::before {
     content: '';
     position: absolute;
@@ -29,7 +29,7 @@ export const PostWrapper = styled.section`
     background: var(--highlight);
     opacity: 0.8;
   }
-  
+
   &:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
@@ -68,10 +68,9 @@ export const PostTag = styled.div`
   border-radius: 4px;
   min-height: auto;
   min-width: auto;
-  padding: .35rem .7rem;
-  margin-bottom: .7rem;
+  padding: 0.35rem 0.7rem;
+  margin-bottom: 0.7rem;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
-  background: linear-gradient(135deg, var(--highlight) 0%, #6457c6 100%);
 
   ${media.lessThan('large')`
     font-size: 0.65rem;
@@ -79,33 +78,33 @@ export const PostTag = styled.div`
   `}
 
   &.is-js {
-    background: linear-gradient(135deg, #d6ba32 0%, #b09b2a 100%);
+    background: #d6ba32;
     color: #000;
   }
 
   &.is-misc {
-    background: linear-gradient(135deg, #7AAB13 0%, #5e8914 100%);
+    background: #7aab13;
   }
 
   &.is-dev {
-    background: linear-gradient(135deg, #637a91 0%, #4e6073 100%);
+    background: #637a91;
   }
 
   &.is-css {
-    background: linear-gradient(135deg, #2DA0C3 0%, #2487a5 100%);
+    background: #2da0c3;
   }
 
   &.is-go {
-    background: linear-gradient(135deg, #00ADD8 0%, #0092b9 100%);
+    background: #00add8;
     color: #ffffff;
   }
 
   &.is-proto {
-    background: linear-gradient(135deg, #7C20F2 0%, #6018bc 100%);
+    background: #7c20f2;
   }
 
   &.is-a11y {
-    background: linear-gradient(135deg, #009e66 0%, #008553 100%);
+    background: #009e66;
   }
 `
 
@@ -129,14 +128,14 @@ export const PostTitle = styled.h1`
   color: var(--postColor);
   line-height: 1.3;
   position: relative;
-  
+
   &::after {
     content: '';
     position: absolute;
     bottom: -8px;
     left: 0;
     width: 30px;
-    height: = 2px;
+    height: 2px;
     background: var(--highlight);
     opacity: 0.5;
   }

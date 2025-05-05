@@ -69,14 +69,16 @@ export const ProfileAuthor = styled.h1`
   font-size: 1.8rem;
   margin: 0.5rem auto 1.5rem;
   font-weight: 700;
-  background: linear-gradient(
-    90deg,
-    var(--highlight) 0%,
-    var(--postColor) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  color: var(--highlight);
+  letter-spacing: -0.02em;
+  
+  body.dark & {
+    text-shadow: 0 0 15px rgba(162, 119, 255, 0.4);
+  }
+  
+  body.light & {
+    text-shadow: 0 0 15px rgba(233, 64, 87, 0.2);
+  }
 
   ${media.lessThan('large')`
     font-size: 1.2rem;
@@ -90,10 +92,12 @@ export const ProfileAuthor = styled.h1`
 
 export const ProfilePosition = styled.small`
   display: block;
-  font-size: 1.1rem;
-  font-weight: 400;
-  letter-spacing: 0.05em;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
   margin-bottom: 1rem;
+  color: var(--texts);
+  opacity: 0.85;
 
   ${media.lessThan('large')`
     font-size: .8rem;
