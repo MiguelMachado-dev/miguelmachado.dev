@@ -99,17 +99,17 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body.light {
-    --borders: #dedede;
-    --postColor: #111;
-    --texts: #555555;
-    --highlight: #ff6767;
-    --mediumBackground: #f0f0f3;
-    --background: #fff;
-    --white: #fff;
-    --black: #222;
-    --card-bg: rgba(255, 255, 255, 0.7);
-    --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-    --grid-pattern: rgba(255, 103, 103, 0.03);
+    --borders: #c5c5d2;
+    --postColor: #222232;
+    --texts: #444455;
+    --highlight: #e94057;
+    --mediumBackground: #f6f7fa;
+    --background: #ffffff;
+    --white: #ffffff;
+    --black: #222232;
+    --card-bg: rgba(250, 250, 255, 0.9);
+    --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    --grid-pattern: rgba(233, 64, 87, 0.03);
   }
 
   /* Add tech-themed background pattern overlay */

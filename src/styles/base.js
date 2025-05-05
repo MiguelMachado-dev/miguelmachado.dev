@@ -133,19 +133,23 @@ export const MainContent = styled.section`
   }
 
   code {
-    background: #011627;
-    color: white;
-    padding: 0.1em;
+    background: var(--mediumBackground);
+    color: var(--highlight);
+    padding: 0.2em 0.4em;
     border-radius: 0.3em;
     white-space: normal;
     overflow-wrap: break-word;
     font-family: 'MonoLisa-Regular', 'Fira Code', 'JetBrains Mono', Consolas,
       Monaco, Andale Mono, Ubuntu Mono, monospace;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    border: 1px solid var(--borders);
   }
 
   pre > code {
     white-space: pre;
+    background: #011627 !important;
+    color: white !important;
+    border: none !important;
   }
 
   img {

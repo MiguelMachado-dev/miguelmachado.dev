@@ -12,11 +12,11 @@ export const PostWrapper = styled.section`
   align-items: flex-start;
   position: relative;
   margin-bottom: 1rem;
-  background: rgba(21, 20, 27, 0.4);
+  background: var(--card-bg);
   backdrop-filter: blur(10px);
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(162, 119, 255, 0.08);
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--borders);
   overflow: hidden;
   
   &::before {

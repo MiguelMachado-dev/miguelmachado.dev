@@ -6,7 +6,7 @@ import transitions from '../../styles/transitions'
 export const SidebarContainer = styled.aside`
   align-items: center;
   border-right: 1px solid var(--borders);
-  background: linear-gradient(160deg, #15141b 0%, #110f18 100%);
+  background: var(--mediumBackground);
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -22,6 +22,14 @@ export const SidebarContainer = styled.aside`
   transform: translateX(0); /* Ensure it's visible by default */
   overflow-y: auto;
   
+  body.dark & {
+    background: linear-gradient(160deg, #15141b 0%, #110f18 100%);
+  }
+  
+  body.light & {
+    background: linear-gradient(160deg, #f6f7fa 0%, #ffffff 100%);
+  }
+  
   &::before {
     content: '';
     position: absolute;
@@ -30,12 +38,12 @@ export const SidebarContainer = styled.aside`
     width: 100%;
     height: 100%;
     background-image: 
-      linear-gradient(30deg, rgba(162, 119, 255, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(162, 119, 255, 0.03) 87.5%, rgba(162, 119, 255, 0.03)),
-      linear-gradient(150deg, rgba(162, 119, 255, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(162, 119, 255, 0.03) 87.5%, rgba(162, 119, 255, 0.03)),
-      linear-gradient(30deg, rgba(162, 119, 255, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(162, 119, 255, 0.03) 87.5%, rgba(162, 119, 255, 0.03)),
-      linear-gradient(150deg, rgba(162, 119, 255, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(162, 119, 255, 0.03) 87.5%, rgba(162, 119, 255, 0.03)),
-      linear-gradient(60deg, rgba(162, 119, 255, 0.03) 25%, transparent 25.5%, transparent 75%, rgba(162, 119, 255, 0.03) 75%, rgba(162, 119, 255, 0.03)),
-      linear-gradient(60deg, rgba(162, 119, 255, 0.03) 25%, transparent 25.5%, transparent 75%, rgba(162, 119, 255, 0.03) 75%, rgba(162, 119, 255, 0.03));
+      linear-gradient(30deg, var(--grid-pattern) 12%, transparent 12.5%, transparent 87%, var(--grid-pattern) 87.5%, var(--grid-pattern)),
+      linear-gradient(150deg, var(--grid-pattern) 12%, transparent 12.5%, transparent 87%, var(--grid-pattern) 87.5%, var(--grid-pattern)),
+      linear-gradient(30deg, var(--grid-pattern) 12%, transparent 12.5%, transparent 87%, var(--grid-pattern) 87.5%, var(--grid-pattern)),
+      linear-gradient(150deg, var(--grid-pattern) 12%, transparent 12.5%, transparent 87%, var(--grid-pattern) 87.5%, var(--grid-pattern)),
+      linear-gradient(60deg, var(--grid-pattern) 25%, transparent 25.5%, transparent 75%, var(--grid-pattern) 75%, var(--grid-pattern)),
+      linear-gradient(60deg, var(--grid-pattern) 25%, transparent 25.5%, transparent 75%, var(--grid-pattern) 75%, var(--grid-pattern));
     background-size: 20px 35px;
     background-position: 0 0, 0 0, 10px 18px, 10px 18px, 0 0, 10px 18px;
     opacity: 0.2;
