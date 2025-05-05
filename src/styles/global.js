@@ -70,7 +70,7 @@ const GlobalStyles = createGlobalStyle`
     background: var(--background);
     line-height: 1;
     font-size: 100%;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   }
   img {
     display: block;
@@ -79,11 +79,13 @@ const GlobalStyles = createGlobalStyle`
   }
 
   ::selection {
-    background-color: #3d375e7f;
+    background-color: rgba(162, 119, 255, 0.3);
+    color: var(--postColor);
   }
 
+  /* Updated tech-themed dark mode */
   body.dark {
-    --borders: #38444d;
+    --borders: #2a2a3c;
     --texts: #8899a6;
     --postColor: #edecee;
     --highlight: #a277ff;
@@ -91,6 +93,9 @@ const GlobalStyles = createGlobalStyle`
     --background: #15141b;
     --white: #fff;
     --black: #222;
+    --card-bg: rgba(25, 25, 40, 0.5);
+    --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+    --grid-pattern: rgba(162, 119, 255, 0.03);
   }
 
   body.light {
@@ -102,10 +107,36 @@ const GlobalStyles = createGlobalStyle`
     --background: #fff;
     --white: #fff;
     --black: #222;
+    --card-bg: rgba(255, 255, 255, 0.7);
+    --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    --grid-pattern: rgba(255, 103, 103, 0.03);
+  }
+
+  /* Add tech-themed background pattern overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: 
+      radial-gradient(circle at 25px 25px, var(--grid-pattern) 2px, transparent 0),
+      linear-gradient(to right, var(--grid-pattern) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-pattern) 1px, transparent 1px);
+    background-size: 50px 50px, 25px 25px, 25px 25px;
+    z-index: -1;
+    opacity: 0.4;
   }
 
   pre code {
     background: inherit !important;
+    border-radius: 8px;
+  }
+
+  code {
+    font-family: 'MonoLisa-Regular', monospace;
   }
 
   .infinite-scroll-component {
@@ -114,8 +145,17 @@ const GlobalStyles = createGlobalStyle`
     padding: 0 4rem;
 
     ${media.lessThan('large')`
-      padding: 0;
+      padding: 0 1rem;
     `}
+  }
+
+  /* Smooth transitions between light and dark mode */
+  body {
+    transition: background-color 0.3s ease;
+  }
+
+  a, button {
+    transition: all 0.25s ease;
   }
 `
 export default GlobalStyles
