@@ -7,16 +7,43 @@ export const ProfileContainer = styled.section`
   display: ${props => (props.isMobileHeader ? 'none' : 'flex')};
   color: var(--texts);
   flex-direction: column;
+  position: relative;
+  padding-bottom: 2rem;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--highlight) 50%,
+      transparent 100%
+    );
+    opacity: 0.3;
+  }
 
   ${media.lessThan('large')`
     align-items: center;
+    justify-content: center;
     display: ${props => (props.isMobileHeader ? 'flex' : 'none')};
-    background: var(--mediumBackground);
-    border-bottom: 1px solid var(--borders);
-    padding: 1rem;
+    background: rgba(17, 15, 24, 0.85);
+    border-bottom: 1px solid rgba(58, 56, 66, 0.6);
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+    padding: 0.75rem;
     width: 100vw;
     position: fixed;
     z-index: 10;
+    backdrop-filter: blur(10px);
+    flex-direction: row;
+
+    &::after {
+      display: none;
+    }
   `}
 `
 
@@ -24,6 +51,7 @@ export const ProfileLink = styled.a`
   color: var(--texts);
   text-decoration: none;
   transition: ${transitions.COLOR};
+  position: relative;
 
   &:hover {
     color: var(--highlight);
@@ -31,35 +59,74 @@ export const ProfileLink = styled.a`
 
   ${media.lessThan('large')`
     display: flex;
-    text-align: left;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   `}
 `
 
 export const ProfileAuthor = styled.h1`
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   margin: 0.5rem auto 1.5rem;
+  font-weight: 700;
+  color: var(--highlight);
+  letter-spacing: -0.02em;
+  
+  body.dark & {
+    text-shadow: 0 0 15px rgba(162, 119, 255, 0.4);
+  }
+  
+  body.light & {
+    text-shadow: 0 0 15px rgba(233, 64, 87, 0.2);
+  }
 
   ${media.lessThan('large')`
     font-size: 1.2rem;
     margin: 0 0 0 10px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   `}
 `
 
 export const ProfilePosition = styled.small`
   display: block;
-  font-size: 1.2rem;
-  font-weight: 300;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+  color: var(--texts);
+  opacity: 0.85;
 
   ${media.lessThan('large')`
     font-size: .8rem;
-    margin-top: .2rem;
+    margin-top: 0;
+    margin-bottom: 0;
   `}
 `
 
 export const ProfileDescription = styled.p`
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 300;
-  line-height: 1.4;
+  line-height: 1.5;
+  opacity: 0.85;
+  padding: 0 1rem;
+  position: relative;
+
+  &::before {
+    content: '{ ';
+    color: var(--highlight);
+    font-weight: 700;
+    opacity: 0.6;
+  }
+
+  &::after {
+    content: ' }';
+    color: var(--highlight);
+    font-weight: 700;
+    opacity: 0.6;
+  }
 
   ${media.lessThan('large')`
     display: none;

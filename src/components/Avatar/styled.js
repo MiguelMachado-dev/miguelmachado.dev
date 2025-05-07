@@ -12,7 +12,10 @@ export const AvatarWrapper = styled.div`
   clip-path: circle(50% at 50% 50%);
 
   ${media.lessThan('large')`
-    height: 2rem;
-    width: 2rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
   `}
 `
