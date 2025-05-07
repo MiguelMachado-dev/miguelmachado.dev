@@ -11,10 +11,10 @@ export const PostWrapper = styled.section`
   flex-direction: column;
   align-items: flex-start;
   position: relative;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   background: var(--card-bg);
   backdrop-filter: blur(10px);
-  border-radius: 12px;
+  border-radius: 16px;
   box-shadow: var(--card-shadow);
   border: 1px solid var(--borders);
   overflow: hidden;
@@ -24,21 +24,23 @@ export const PostWrapper = styled.section`
     position: absolute;
     top: 0;
     left: 0;
-    width: 3px;
+    width: 4px;
     height: 100%;
     background: var(--highlight);
-    opacity: 0.8;
+    opacity: 0.9;
   }
 
   &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 14px 28px var(--card-shadow-hover-strong),
+      0 10px 10px var(--card-shadow-hover-light);
+    border-color: var(--highlight);
   }
 
   ${media.lessThan('large')`
-    padding: 1.5rem 1rem;
-    margin: 0.75rem 1rem;
-    border-radius: 8px;
+    padding: 1.5rem 1.25rem;
+    margin: 1rem;
+    border-radius: 12px;
   `}
 `
 
@@ -60,21 +62,22 @@ export const PostTag = styled.div`
   background: var(--highlight);
   color: var(--white);
   display: flex;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 700;
   justify-content: center;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  border-radius: 4px;
+  border-radius: 8px;
   min-height: auto;
   min-width: auto;
-  padding: 0.35rem 0.7rem;
-  margin-bottom: 0.7rem;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+  padding: 0.4rem 0.8rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 
   ${media.lessThan('large')`
-    font-size: 0.65rem;
-    padding: .25rem .5rem;
+    font-size: 0.75rem;
+    padding: .3rem .6rem;
+    margin-bottom: 0.8rem;
   `}
 
   &.is-js {
@@ -117,35 +120,35 @@ export const PostInfo = styled.div`
 export const PostDate = styled.time`
   font-size: 0.8rem;
   margin-top: 0.2rem;
-  color: rgba(136, 153, 166, 0.8);
+  color: var(--texts-secondary);
   font-family: 'MonoLisa-Regular', monospace;
 `
 
 export const PostTitle = styled.h1`
-  font-size: 1.6rem;
+  font-size: 1.9rem;
   font-weight: 700;
-  margin: 0.2rem 0 0.5rem;
+  margin: 0.5rem 0 0.75rem;
   color: var(--postColor);
-  line-height: 1.3;
+  line-height: 1.35;
   position: relative;
 
   &::after {
     content: '';
     position: absolute;
-    bottom: -8px;
+    bottom: -10px;
     left: 0;
-    width: 30px;
-    height: 2px;
+    width: 40px;
+    height: 3px;
     background: var(--highlight);
-    opacity: 0.5;
+    opacity: 0.6;
   }
 `
 
 export const PostDescription = styled.h2`
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 1.5;
   color: var(--texts);
-  margin-top: 0.6rem;
+  margin-top: 0.8rem;
   opacity: 0.85;
 `

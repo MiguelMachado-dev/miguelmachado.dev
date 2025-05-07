@@ -89,13 +89,17 @@ const GlobalStyles = createGlobalStyle`
     --texts: #8899a6;
     --postColor: #edecee;
     --highlight: #a277ff;
+    --highlight-hover: #b990ff; /* Slightly brighter highlight for hovers */
     --mediumBackground: #110f18;
     --background: #15141b;
     --white: #fff;
     --black: #222;
     --card-bg: rgba(25, 25, 40, 0.5);
     --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+    --card-shadow-hover-strong: rgba(0, 0, 0, 0.35); /* For the 0 14px 28px part */
+    --card-shadow-hover-light: rgba(0, 0, 0, 0.28); /* For the 0 10px 10px part */
     --grid-pattern: rgba(162, 119, 255, 0.03);
+    --texts-secondary: #6c7a86; /* Lighter than main texts for less emphasis */
   }
 
   body.light {
@@ -103,13 +107,17 @@ const GlobalStyles = createGlobalStyle`
     --postColor: #222232;
     --texts: #444455;
     --highlight: #e94057;
+    --highlight-hover: #ff5c75; /* Slightly brighter highlight for hovers */
     --mediumBackground: #f6f7fa;
     --background: #ffffff;
     --white: #ffffff;
     --black: #222232;
     --card-bg: rgba(250, 250, 255, 0.9);
     --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    --card-shadow-hover-strong: rgba(0, 0, 0, 0.12); /* Subtle shadow for light mode */
+    --card-shadow-hover-light: rgba(0, 0, 0, 0.10);  /* Subtle shadow for light mode */
     --grid-pattern: rgba(233, 64, 87, 0.03);
+    --texts-secondary: #656575; /* Lighter than main texts for less emphasis */
   }
 
   /* Add tech-themed background pattern overlay */
@@ -121,7 +129,7 @@ const GlobalStyles = createGlobalStyle`
     width: 100%;
     height: 100%;
     pointer-events: none;
-    background-image: 
+    background-image:
       radial-gradient(circle at 25px 25px, var(--grid-pattern) 2px, transparent 0),
       linear-gradient(to right, var(--grid-pattern) 1px, transparent 1px),
       linear-gradient(to bottom, var(--grid-pattern) 1px, transparent 1px);

@@ -13,5 +13,4 @@ export const BLOG_URL = 'https://miguelmachado.dev'
 
 export const BLOG_AUTHOR_POSITION = 'Software Engineer'
 
-export const BLOG_AUTHOR_DESCRIPTION =
-  'Escrevo sobre desenvolvimento web, backend e minhas experiências no mundo dos games. TypeScript, React, Next.js, Golang, Kotlin, GraphQL e C# fazem parte do meu stack.'
+export const BLOG_AUTHOR_DESCRIPTION = `Apaixonado por desenvolvimento web, backend e games. Trabalhando com TypeScript, React, Next.js, Golang, e mais.`
