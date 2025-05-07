@@ -4034,11 +4034,6 @@
     "@testing-library/dom" "^8.0.0"
     "@types/react-dom" "<18.0.0"
 
-"@testing-library/user-event@^14.4.3":
-  version "14.6.1"
-  resolved "https://registry.yarnpkg.com/@testing-library/user-event/-/user-event-14.6.1.tgz#13e09a32d7a8b7060fe38304788ebf4197cd2149"
-  integrity sha512-vq7fv0rnt+QTXgPxr5Hjc210p6YKq2kmdziLgnsZGgLJ9e6VAShx1pACLuRjd/AS/sr7phAR58OIIpf0LlmQNw==
-
 "@tootallnate/once@2":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-2.0.0.tgz#f544a148d3ab35801c1f633a7441fd87c2e484bf"
@@ -9350,11 +9345,6 @@ printable-characters@^1.0.42:
   version "1.0.42"
   resolved "https://registry.yarnpkg.com/printable-characters/-/printable-characters-1.0.42.tgz#3f18e977a9bd8eb37fcc4ff5659d7be90868b3d8"
   integrity sha512-dKp+C4iXWK4vVYZmYSd0KBH5F/h1HoZRsbJ82AVKRO3PEo8L4lBS/vLwhVtpwwuYcoIsVY+1JYKR268yn480uQ==
-
-prism-theme-night-owl@1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/prism-theme-night-owl/-/prism-theme-night-owl-1.4.0.tgz#af8a215ba75c081e22e74be41661dc40d7ad0c34"
-  integrity sha512-1N1GVbVorGd5t1Vw76yL/3rhqdiCpDrJg26Is+jGeMV7qiIMZL+bC7Mjx7HMMuVKZoi+2nWSbU5IutBYNy9tiQ==
 
 prismjs@^1.30.0:
   version "1.30.0"

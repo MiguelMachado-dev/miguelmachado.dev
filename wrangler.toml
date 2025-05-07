@@ -1,4 +1,4 @@
-name = "miguelmachado-dev" # Replace with your desired worker name
+name = "miguelmachado" # Replace with your desired worker name
 main = ".open-next/server-fn/index.js"
 compatibility_date = "2023-10-30" # Or a more recent date
 
