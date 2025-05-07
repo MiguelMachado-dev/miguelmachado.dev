@@ -6,7 +6,7 @@
   "author": "Miguel Machado <hello@miguelmachado.dev>",
   "packageManager": "yarn@1.22.22",
   "dependencies": {
-    "@babel/core": "^7.14.6",
+    "@babel/core": "^7.27.1",
     "@giscus/react": "^2.3.0",
     "@openlab/vercel-netlify-cms-github": "^1.1.1",
     "@opennextjs/cloudflare": "^1.0.1",
