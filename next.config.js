@@ -1,3 +1,7 @@
+const { initOpenNextCloudflareForDev } = require('@opennextjs/cloudflare')
+
+initOpenNextCloudflareForDev()
+
 module.exports = {
   webpack: (config, { dev, isServer }) => {
     // Replace React with Preact only in client production build
