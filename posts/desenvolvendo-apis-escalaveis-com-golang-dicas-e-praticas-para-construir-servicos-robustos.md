@@ -43,7 +43,7 @@ Sua API deve ser capaz de encerrar de forma graciosa, finalizando requisições 
 
 * **Prática:** Use sinais do sistema operacional (como `SIGINT` e `SIGTERM`) para iniciar o processo de shutdown. A partir do Go 1.16, você pode utilizar `signal.NotifyContext()` para uma abordagem mais moderna.
 
-```golang
+```go
 package main
 
 import (
@@ -106,7 +106,7 @@ Go tem um tratamento de erros explícito. Use-o a seu favor para criar APIs robu
       * Defina tipos de erro customizados para erros de domínio específicos.
       * Padronize as respostas de erro da API (ex: JSON com campos `error` e `message`).
 
-```golang
+```go
 package main
 
 import (
@@ -181,7 +181,7 @@ Para APIs robustas, é essencial implementar mecanismos que protejam seu serviç
   * **Rate Limiting:** Limite o número de requisições que um cliente pode fazer em determinado período.
   * **Circuit Breakers:** Previna falhas em cascata ao detectar quando serviços dependentes estão com problemas.
 
-```golang
+```go
 package main
 
 import (
@@ -237,7 +237,7 @@ Use goroutines para executar operações I/O-bound (chamadas de rede, acesso a b
 
 Para tarefas que podem ser processadas em paralelo e que chegam em grande volume, um worker pool pode ajudar a limitar o número de goroutines concorrentes, evitando sobrecarga de recursos.
 
-```golang
+```go
 package main
 
 import (
@@ -322,7 +322,7 @@ Para aplicações mais complexas, considere usar bibliotecas estabelecidas:
       * **Gin Exemplo:**
 
 
-    ```golang
+    ```go
     package main
 
     import (
@@ -393,7 +393,7 @@ Para aplicações mais complexas, considere usar bibliotecas estabelecidas:
 1.  **Connection Pooling:** O pacote `database/sql` já gerencia um pool de conexões. Configure `SetMaxOpenConns`, `SetMaxIdleConns`, `SetConnMaxLifetime` e `SetConnMaxIdleTime` adequadamente.
 2.  **Context para Timeouts e Cancelamento:** Sempre passe um `context.Context` para as operações de banco de dados. Isso permite cancelar queries longas ou definir timeouts.
 
-```golang
+```go
 package main
 
 import (
@@ -469,7 +469,7 @@ Middlewares são funções que processam requisições antes ou depois do handle
 4.  **Rate Limiting:** Proteja sua API contra abuso, limitando o número de requisições por cliente.
 5.  **CORS:** Configure Cross-Origin Resource Sharing corretamente para aplicações web.
       * **Exemplo (Gin):**
-        ```golang
+        ```go
         // package main // Supondo que está no mesmo contexto do exemplo Gin anterior
 
         import (
@@ -534,7 +534,7 @@ Para manter APIs escaláveis e robustas, é crucial poder observar seu comportam
       * **zerolog**: Extremamente rápido, com alocações zero em muitos casos de uso.
 
 
-    ```golang
+    ```go
     package main
 
     import (
@@ -574,7 +574,7 @@ Para manter APIs escaláveis e robustas, é crucial poder observar seu comportam
 
 2.  **Métricas:** Exponha métricas sobre a saúde da aplicação (taxa de requisições, taxa de erros, latência, uso de recursos). Prometheus com `promhttp` é uma escolha popular.
 
-    ```golang
+    ```go
     package main
 
     import (
@@ -645,7 +645,7 @@ Para manter APIs escaláveis e robustas, é crucial poder observar seu comportam
 
 3.  **Tracing Distribuído:** Em arquiteturas de microserviços, use OpenTelemetry para entender o fluxo de uma requisição através de diferentes serviços e identificar gargalos.
 
-    ```golang
+    ```go
     package main
 
     import (
@@ -768,7 +768,7 @@ Para manter APIs escaláveis e robustas, é crucial poder observar seu comportam
 3.  **Testes de API (End-to-End):** Use o pacote `net/http/httptest` para testar seus handlers HTTP sem precisar subir um servidor real.
 4.  **Testes de Carga:** Ferramentas como k6, JMeter ou Artillery podem simular tráfego em grandes volumes para verificar o comportamento sob carga.
 
-```golang
+```go
 // Em um arquivo user_handlers_test.go
 package main
 
